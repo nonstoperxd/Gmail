@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Code Fetcher with Gmail Variations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left Section: Order Code Fetcher -->
+        <div class="left-section">
+            <h1>Order Code Fetcher</h1>
+            <div class="input-group">
+                <label for="emailUrl">Enter Email & URL</label>
+                <textarea id="emailUrl" placeholder="Enter your email and URL here..."></textarea>
+                <div class="button-group">
+                    <button class="submit-btn" onclick="processEmailAndUrl()">Submit</button>
+                    <button class="clear-btn" onclick="clearOrderId()">Clear</button>
+                </div>
+                <div id="emailUrlError" class="error"></div>
+            </div>
+            <div class="code-container">
+                <div class="code-box">
+                    <h3>Email</h3>
+                    <div id="emailDisplay" class="email-display"></div>
+                    <button id="copyEmail" class="copy-btn" style="display: none;" onclick="copyCode('emailDisplay')">Copy</button>
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="code-box">
+                    <h3>5-Digit Code</h3>
+                    <div id="fiveDigitCode" class="code-display"></div>
+                    <button id="copyFiveDigit" class="copy-btn" style="display: none;" onclick="copyCode('fiveDigitCode')">Copy</button>
+                    <div id="fiveDigitLoader" class="loader" style="display: none;"></div>
+                    <div id="fiveDigitError" class="error"></div>
+                </div>
+                <div class="code-box">
+                    <h3>8-Digit Code</h3>
+                    <div id="eightDigitCode" class="code-display"></div>
+                    <button id="copyEightDigit" class="copy-btn" style="display: none;" onclick="copyCode('eightDigitCode')">Copy</button>
+                    <div id="eightDigitLoader" class="loader" style="display: none;"></div>
+                    <div id="eightDigitError" class="error"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Gmail Variations -->
+        <div class="right-section">
+            <h1>Gmail Variations</h1>
+            <div class="gmail-box">
+                <h3>Generated Gmail</h3>
+                <div id="gmailDisplay" class="gmail-display"></div>
+                <div id="gmailError" class="error"></div>
+                <div class="gmail-button-group">
+                    <button id="copyGmail" class="copy-btn
